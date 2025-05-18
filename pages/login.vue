@@ -1,6 +1,6 @@
 <script setup>
-
 const isLoggedIn = useIsLoggedIn();
+// const user = useUser();
 definePageMeta({
     layout : "plain",
 })
