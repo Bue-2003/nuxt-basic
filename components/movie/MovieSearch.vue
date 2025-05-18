@@ -20,7 +20,13 @@ search();
     <ul style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none">
       <li v-for="movie in movies" :key="movie.imdbID">
         <NuxtLink :to="{ name: 'movies-id', params: { id: movie.imdbID } }">
-          <img :src="movie.Poster" :alt="movie.title" width="100" />
+          <NuxtImg :src="movie.Poster" 
+          :alt="movie.title"
+          width="300" 
+          height="200"
+          fit="fill"
+          format="webp"
+          />
         </NuxtLink>
       </li>
     </ul>
