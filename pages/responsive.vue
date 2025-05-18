@@ -49,7 +49,7 @@ img {
 
 
 <!-- The NuxtPicture component -->
-<script setup>
+<!-- <script setup>
 definePageMeta({
   layout: "plain",
 });
@@ -94,5 +94,56 @@ const extract = computed(() => {
   display: block;
   max-width: 100%;
 }
-</style>
+</style> -->
 <!-- End NuxtPicture component -->
+
+
+
+
+<!-- Responsive Art Direction Hack -->
+<script setup>
+definePageMeta({
+  layout: "plain",
+});
+const modifiers = ref({
+  quality: 100,
+  flip: undefined,
+  flop: undefined,
+  sharpen: undefined,
+  blur: undefined,
+  negate: undefined,
+  tint: undefined,
+  grayscale: undefined,
+});
+
+const crop = ref({
+  left: 2213,
+  top: 402,
+  width: 800,
+  height: 800,
+});
+
+const extract = computed(() => {
+  if (crop.value.width && crop.value.height)
+    return `${crop.value.left}_${crop.value.top}_${crop.value.width}_${crop.value.height}`;
+  return;
+});
+</script>
+<template>
+  <picture>
+    <source
+      media="(max-width:650px)"
+      srcset="/cat.webp"
+    />
+    <img src="/cat.webp" alt="" />
+  </picture>
+</template>
+
+<style scoped>
+:deep(img) {
+  display: block;
+  max-width: 100%;
+}
+</style>
+
+<!-- End Responsive Art Direction Hack -->
