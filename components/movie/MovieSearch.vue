@@ -26,6 +26,7 @@ search();
           height="200"
           fit="fill"
           format="webp"
+          loading="lazy"
           />
         </NuxtLink>
       </li>
