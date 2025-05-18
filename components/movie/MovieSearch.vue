@@ -23,11 +23,18 @@ search();
           <NuxtImg :src="movie.Poster" 
           :alt="movie.title"
           width="300" 
+          /> 
+          <!-- <pre>
+            {{ movie }}
+          </pre>
+          <NuxtImg :src="movie.Poster" 
+          :alt="movie.title"
+          width="300" 
           height="200"
           fit="fill"
           format="webp"
           loading="lazy"
-          />
+          /> -->
         </NuxtLink>
       </li>
     </ul>
